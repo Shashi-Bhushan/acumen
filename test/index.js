@@ -1,5 +1,7 @@
-var Acumen = require('..');
-var assert = require('assert');
+"use strict";
+
+const Acumen = require('..');
+const assert = require('assert');
 
 //var Acumen = require('acumen');
 

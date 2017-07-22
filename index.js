@@ -1,3 +1,5 @@
+"use strict";
+
 const Matrix = require('node-matrix');
 const Emitter = require('emitter-component');
 /**
