@@ -20,7 +20,8 @@
     "url": "https://github.com/Shashi-Bhushan/acumen/issues"
   },
   "dependencies": {
-    "node-matrix": "0.1.1"
+    "node-matrix": "0.1.1",
+    "node.extend": "2.0.0"
   },
   "homepage": "https://github.com/Shashi-Bhushan/acumen#readme"
 }
