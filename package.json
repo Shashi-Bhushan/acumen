@@ -11,13 +11,16 @@
     "url": "git+https://github.com/Shashi-Bhushan/acumen.git"
   },
   "keywords": [
-    "neural",
-    "network"
+    "neural-network",
+    "machine-learning"
   ],
   "author": "Shashi Bhushan <sbhushan1@outlook.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Shashi-Bhushan/acumen/issues"
+  },
+  "dependencies": {
+    "node-matrix": "0.1.1"
   },
   "homepage": "https://github.com/Shashi-Bhushan/acumen#readme"
 }
