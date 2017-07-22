@@ -4,7 +4,8 @@
   "description": "Neural Network Predictor Built in JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "mocha /test"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,13 @@
     "url": "https://github.com/Shashi-Bhushan/acumen/issues"
   },
   "dependencies": {
+    "emitter-component": "^1.1.1",
     "node-matrix": "0.1.1",
     "node.extend": "2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^0.22.1",
+    "mocha": "2.x"
   },
   "homepage": "https://github.com/Shashi-Bhushan/acumen#readme"
 }
