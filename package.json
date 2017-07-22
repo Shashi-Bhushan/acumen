@@ -1,11 +1,11 @@
 {
   "name": "acumen",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Neural Network Predictor Built in JS",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha"
+    "test": "mocha --reporter spec"
   },
   "repository": {
     "type": "git",
