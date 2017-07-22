@@ -3,6 +3,8 @@ Acumen
 
 Neural Network Predictor Build in Javascript
 
+[![Travis Build](https://travis-ci.org/Shashi-Bhushan/acumen.svg?branch=master)](https://travis-ci.org/Shashi-Bhushan/acumen.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/Shashi-Bhushan/acumen/badge.svg?branch=master)](https://coveralls.io/github/Shashi-Bhushan/acumen?branch=master)
+
 ## Installation
 
   `npm install acumen`
