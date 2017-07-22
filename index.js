@@ -7,6 +7,8 @@ var extend = require('node.extend');
 
 class Acumen extends Emitter{
     constructor (options) {
+        super();
+
         options = extend(true, {
             // number of hidden layers in the neural network, default will be only one hidden layer
             hiddenLayers    : 1,
@@ -231,6 +233,11 @@ class Acumen extends Emitter{
         returnValue.output = Matrix(returnValue.output);
 
         return returnValue;
+    }
+
+    predict (input) {
+        const results = this.forwardPropagation({ input: Matrix([input]) })
+        return results[results.length - 1].result[0]
     }
 }
 
