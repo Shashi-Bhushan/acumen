@@ -68,12 +68,11 @@ describe('tests()',function(){
             '#######'
         ))
 
-        assert(result == map('c')[0]);;
+        assert(result[0] == map('c')[0]);
 
         console.log("A is : " + a + " and map(a) is ",map('a')) // ~ 0.1
         console.log("A is : " + b + " and map(b) is ",map('b')) // ~ 0.3
         console.log("A is : " + c + " and map(c) is ",map('c')) // ~ 0.5
-        console.log("Result is : " + result) // ~ 0.5
 
     });
 
@@ -81,12 +80,10 @@ describe('tests()',function(){
         return string
             .trim()
             .split('')
-            .map(integer)
-
-        function integer(symbol) {
-            if ('#' === symbol) return 1
-            if ('.' === symbol) return 0
-        }
+            .map(function(symbol){
+                if ('#' === symbol) return 1
+                if ('.' === symbol) return 0
+            })
     }
 
     /**

@@ -91,6 +91,17 @@ class Acumen extends Emitter{
 
     }
 
+    /**
+     *
+     * @param examples
+     * @returns [
+     *              {
+     *                  sum : [ ... ],
+     *                  result : [ ...]
+     *              },
+     *              ...
+     *          ]
+     */
     forwardPropagation (examples) {
         const results = [];
 
@@ -125,6 +136,14 @@ class Acumen extends Emitter{
         return results;
     }
 
+    /**
+     * Back Propagation in a Neural Network
+     * @param examples
+     * @param results
+     * @returns {
+     *              Matrix(target value - calculated value)
+     *          }
+     */
     backPropagation (examples, results) {
         const hiddenLayers = this.hiddenLayers;
         const learningRate = this.learningRate;
@@ -190,6 +209,17 @@ class Acumen extends Emitter{
         return error
     }
 
+    /**
+     * Gives X* theta and sigmoid(X * theta)
+     * @param weights
+     *          Theta in the equation
+     * @param inputs
+     *          X's in the equation
+     * @returns {
+     *              sum     : [ weights * inputs],
+     *              result  : [ sigmoid(sum) ]
+     *          }
+     */
     sum (weights, inputs) {
         const result = {};
 
@@ -199,6 +229,14 @@ class Acumen extends Emitter{
         return result;
     }
 
+    /**
+     * Mathematical Sigmoid Function
+     *
+     * @param z
+     *      The Matreix for which sigmoid is to be found
+     * @returns {number}
+     *      Sigmoid value of the matrix
+     */
     sigmoid (z) {
         return 1 / (1 + Math.exp(-z));
     }
@@ -237,9 +275,14 @@ class Acumen extends Emitter{
         return returnValue;
     }
 
+    /**
+     * Predicts the last Layers' Result value as an output of a Trained Neural Network
+     * @param input
+     * @returns {predicted value}
+     */
     predict (input) {
         const results = this.forwardPropagation({ input: Matrix([input]) })
-        return results[results.length - 1].result[0]
+        return results[results.length - 1].result
     }
 }
 
