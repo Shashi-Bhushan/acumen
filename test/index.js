@@ -11,7 +11,9 @@ describe('tests()',function(){
     const alphabets = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
     it('sample test', function() {
-        const acumen = new Acumen();
+        const acumen = new Acumen({
+            learningRate: 0.003
+        });
 
         const a = character(
             '.#####.' +
@@ -83,16 +85,24 @@ describe('tests()',function(){
     })
 
     it('XOR Test', function() {
+        const data = [
+            {input : [0, 0], output : [ 1 ]},
+            {input : [0, 1], output : [ 0 ]},
+            {input : [1, 0], output : [ 0 ]},
+            {input : [1, 1], output : [ 0 ]}
+        ];
+
         const acumen = new Acumen()
             .learn([
-                { input: [0, 0], output: [ 0 ] },
-                { input: [0, 1], output: [ 1 ] },
-                { input: [1, 0], output: [ 1 ] },
-                { input: [1, 1], output: [ 0 ] }
+                { input: data[0].input, output: data[0].output },
+                { input: data[1].input, output: data[1].output },
+                { input: data[2].input, output: data[2].output },
+                { input: data[3].input, output: data[3].output }
             ])
 
-        const result = acumen.predict([ 0, 0 ])
-        console.log("XOR Test Expected Result is : " + 0)
+        const toCheck = 1;
+        const result = acumen.predict(data[toCheck].input)
+        console.log("XOR Test Expected Result is : " + data[toCheck].output)
         console.log("XOR Test Result is : " + result[0])
     })
 
