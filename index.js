@@ -2,6 +2,8 @@
 
 const Matrix = require('node-matrix');
 const Emitter = require('emitter-component');
+const sample = require('samples')
+
 /**
  * @link https://www.npmjs.com/package/node.extend
  */
@@ -64,8 +66,8 @@ class Acumen extends Emitter{
         this.weights.push(
             Matrix({
                 rows    : data.input[0].length,
-                columns : data.hiddenUnits,
-                value   : Math.random()
+                columns : this.hiddenUnits,
+                values   : sample
             })
         );
 
@@ -73,9 +75,9 @@ class Acumen extends Emitter{
         for(let index = 0; index < data.hiddenLayers; index++) {
             this.weights.push(
                 Matrix({
-                    rows    : data.hiddenUnits,
-                    columns : data.hiddenUnits,
-                    value   : Math.random()
+                    rows    : this.hiddenUnits,
+                    columns : this.hiddenUnits,
+                    values   : sample
                 })
             );
         }
@@ -83,12 +85,11 @@ class Acumen extends Emitter{
         // Mapping of Hidden Layer > Output Layer
         this.weights.push(
             Matrix({
-                rows    : data.hiddenUnits,
+                rows    : this.hiddenUnits,
                 columns : data.output[0].length,
-                value   : Math.random()
+                values  : sample
             })
         );
-
     }
 
     /**

@@ -57,24 +57,32 @@ describe('tests()',function(){
         /**
          * Predict the letter C, even with a pixel off.
          */
-
-        const result = acumen.predict(character(
-            '#######' +
+        const resultChar = character(
+            '######.' +
             '#......' +
             '#......' +
             '#......' +
             '#......' +
-            '#..##..' +
-            '#######'
-        ))
+            '#......' +
+            '######.'
+        );
+        const result = acumen.predict(resultChar);
 
-        assert(result[0] == map('c')[0]);
+        console.log("Character Test Result is : " + result[0]) // ~ 0.5
+    })
 
-        console.log("A is : " + a + " and map(a) is ",map('a')) // ~ 0.1
-        console.log("A is : " + b + " and map(b) is ",map('b')) // ~ 0.3
-        console.log("A is : " + c + " and map(c) is ",map('c')) // ~ 0.5
+    it('XOR Test', function() {
+        const acumen = new Acumen()
+            .learn([
+                { input: [0, 0], output: [ 0 ] },
+                { input: [0, 1], output: [ 1 ] },
+                { input: [1, 0], output: [ 1 ] },
+                { input: [1, 1], output: [ 0 ] }
+            ])
 
-    });
+        const result = acumen.predict([ 0, 0 ])
+        console.log("XOR Test Result is : " + result[0])
+    })
 
     function character(string) {
         return string

@@ -23,7 +23,8 @@
   "dependencies": {
     "emitter-component": "^1.1.1",
     "node-matrix": "0.1.1",
-    "node.extend": "2.0.0"
+    "node.extend": "2.0.0",
+    "samples": "0.0.2"
   },
   "devDependencies": {
     "eslint": "^0.22.1",
