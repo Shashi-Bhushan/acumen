@@ -68,6 +68,7 @@ describe('tests()',function(){
         );
         const result = acumen.predict(resultChar);
 
+        console.log("Character Test Expected Result is : " + map('c')) // ~ 0.5
         console.log("Character Test Result is : " + result[0]) // ~ 0.5
     })
 
@@ -81,6 +82,7 @@ describe('tests()',function(){
             ])
 
         const result = acumen.predict([ 0, 0 ])
+        console.log("XOR Test Expected Result is : " + 0)
         console.log("XOR Test Result is : " + result[0])
     })
 

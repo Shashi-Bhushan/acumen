@@ -146,6 +146,7 @@ class Acumen extends Emitter{
      *          }
      */
     backPropagation (examples, results) {
+        const activatePrime = this.sigmoidPrime
         const hiddenLayers = this.hiddenLayers;
         const learningRate = this.learningRate;
         const weights = this.weights;
@@ -169,7 +170,7 @@ class Acumen extends Emitter{
         let change = Matrix.multiplyScalar(
             Matrix.multiply(
                 delta,
-                results[hiddenLayers - 1].sum.transpose()
+                results[hiddenLayers - 1].result.transpose()
             ),
             learningRate
         );
