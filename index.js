@@ -15,7 +15,7 @@ class Acumen extends Emitter{
         options = options || {};
 
         // number of hidden layers in the neural network, default will be only one hidden layer
-        this.hiddenLayers   = options.hiddenLayers || 1;
+        this.hiddenLayers   = options.hiddenLayers || 2;
         // number of nodes in each hidden layer
         this.hiddenLayerNeurons    = options.hiddenLayerNeurons || 3;
         // alpha
@@ -67,7 +67,7 @@ class Acumen extends Emitter{
         );
 
         // Set Weights for one Hidden Layer to another
-        for (let index = 0; index < data.hiddenLayers; index++) {
+        for (let index = 0; index < this.hiddenLayers; index++) {
             this.weights.push(
                 Matrix({
                     rows    : this.hiddenLayerNeurons,
