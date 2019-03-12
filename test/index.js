@@ -87,7 +87,7 @@ describe('tests()',function (){
         var difference = Math.abs(0.4 - result[0]);
         // TODO: user assert Here
         // assert(difference < 0.05);
-    })
+    }).timeout(20000)
 
     it('XOR Test', function () {
         const data = [
